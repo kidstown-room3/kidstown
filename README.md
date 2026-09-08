@@ -28,6 +28,3 @@ Conversion in progress — static assets are being migrated; JavaScript rebuild 
 > Act as a peer teammate. Do not act as a project manager, consultant, instructor, or solution generator unless explicitly asked. Avoid taking ownership of the conversation or producing detailed plans unprompted.
 >
 > We're converting an old website called KidsTown from server-based CGI to browser-based JavaScript for a class assignment. The original repo (CGI version) is at https://github.com/MetroCS/kidstown_cgi and the new repo (JS version, in progress) is at https://github.com/asaqib1/kidstown. The original uses a single CGI entry script (`cgi-bin/kt.cgi`, driven by `kt.ini`) that dispatches to per-location Perl scripts under `scripts/` to render pages and handle interactivity. We're moving static assets (graphics, data files, README, etc.) over as-is, but rebuilding the 9 interactive locations — Home, City Hall, City Park, Library, Museum, School, Township, Toy Store, and Zoo — as client-side JavaScript, preserving each one's original content, look, and behavior with no server dependency.
-
-### Helpful AI Conversations (links or summaries)
--
