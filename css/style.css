@@ -1,0 +1,64 @@
+/* KidsTown shared styles
+   Matches the look of the original CGI-based site:
+   tan background (#EEE2B4), black text, default serif headings,
+   centered layout, image-based nav buttons. */
+
+body {
+  margin: 0;
+  background-color: #EEE2B4;
+  color: black;
+  font-family: Times, "Times New Roman", serif;
+}
+
+a {
+  color: blue;
+}
+a:visited {
+  color: purple;
+}
+a:active {
+  color: red;
+}
+
+/* Nav bar: a row of image buttons, same as navbar.pl produced */
+#navbar {
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+#navbar table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+#navbar td {
+  text-align: center;
+  vertical-align: top;
+  padding: 0 4px;
+}
+
+#navbar img {
+  border: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+#navbar a {
+  text-decoration: none;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+}
+
+/* Main content area */
+#app {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+#footer {
+  text-align: center;
+  padding: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+}
