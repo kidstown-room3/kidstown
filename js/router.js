@@ -9,7 +9,14 @@ const DEFAULT_LOCATION = "home";
 
 function renderLocation(name) {
   const app = document.getElementById("app");
+  const navbar = document.getElementById("navbar");
   const location = KidsTown.locations[name];
+
+  // Move the nav bar back to its default spot first, in case the last
+  // location moved it into a slot (see below).
+  if (navbar && app.contains(navbar)) {
+    app.insertAdjacentElement("afterend", navbar);
+  }
 
   if (!location) {
     app.innerHTML = `
@@ -23,6 +30,13 @@ function renderLocation(name) {
 
   app.innerHTML = "";
   location.render(app);
+
+  // A location can add an empty <div id="navbar-slot"> to put the nav
+  // bar somewhere other than the default spot (e.g. Home puts it mid-page).
+  const slot = app.querySelector("#navbar-slot");
+  if (slot && navbar) {
+    slot.replaceWith(navbar);
+  }
 }
 
 function handleRouteChange() {

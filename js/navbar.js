@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { name: "citypark", label: "CityPark", img: "navbtn_citypark.gif" },
   { name: "township", label: "TownShip", img: "navbtn_township.gif" },
   { name: "museum", label: "Museum", img: "navbtn_museum.gif" },
+  { name: "help", label: "Help", img: "navbtn_help.gif" },
 ];
 
 function renderNavbar() {
