@@ -15,6 +15,9 @@
 
   <footer id="footer"></footer>
 
+  <!-- router.js must load first: it creates the shared KidsTown.locations
+       object that every location file below registers itself onto. -->
+  <script src="js/router.js"></script>
   <script src="js/navbar.js"></script>
   <script src="js/locations/home.js"></script>
   <script src="js/locations/citypark.js"></script>
@@ -25,6 +28,5 @@
   <script src="js/locations/township.js"></script>
   <script src="js/locations/toystore.js"></script>
   <script src="js/locations/zoo.js"></script>
-  <script src="js/router.js"></script>
 </body>
 </html>
