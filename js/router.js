@@ -1,13 +1,17 @@
 // router.js
-// Reads the URL hash (e.g. #zoo) and renders the matching location
-// into the #app container. Each location module registers itself
-// on the shared KidsTown.locations object (see js/locations/*.js).
+// Reads the URL hash (e.g. #zoo) and renders the matching location into
+// the #app container. Locations register themselves on KidsTown.locations
+// (see js/locations/*.js).
+//
+// Also handles sub-routes like #cityhall/5010, for locations that have
+// more than one page. The part after the slash is passed to render()
+// as a second argument.
 
 const KidsTown = window.KidsTown || (window.KidsTown = { locations: {} });
 
 const DEFAULT_LOCATION = "home";
 
-function renderLocation(name) {
+function renderLocation(name, subRoute) {
   const app = document.getElementById("app");
   const navbar = document.getElementById("navbar");
   const location = KidsTown.locations[name];
@@ -28,8 +32,12 @@ function renderLocation(name) {
     return;
   }
 
+  // City Park uses a different background than the rest of the site --
+  // see css/style.css's body.loc-* rules.
+  document.body.className = `loc-${name}`;
+
   app.innerHTML = "";
-  location.render(app);
+  location.render(app, subRoute);
 
   // A location can add an empty <div id="navbar-slot"> to put the nav
   // bar somewhere other than the default spot (e.g. Home puts it mid-page).
@@ -40,9 +48,13 @@ function renderLocation(name) {
 }
 
 function handleRouteChange() {
-  const hash = window.location.hash.replace("#", "") || DEFAULT_LOCATION;
-  renderLocation(hash);
-  highlightActiveNavLink(hash);
+  const rawHash = window.location.hash.replace("#", "") || DEFAULT_LOCATION;
+  const slashIndex = rawHash.indexOf("/");
+  const name = slashIndex === -1 ? rawHash : rawHash.slice(0, slashIndex);
+  const subRoute = slashIndex === -1 ? null : rawHash.slice(slashIndex + 1);
+
+  renderLocation(name, subRoute);
+  highlightActiveNavLink(name);
 }
 
 function highlightActiveNavLink(activeName) {
