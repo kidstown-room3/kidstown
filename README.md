@@ -12,15 +12,22 @@ A browser-based JavaScript reimplementation of the original KidsTown website —
 Migrate the KidsTown website from server-based CGI to browser-based JavaScript. Static assets (graphics, data files, README, etc.) are being carried over directly, but the 9 interactive locations (Home, City Hall, City Park, Library, Museum, School, Township, Toy Store, and Zoo) — currently driven by Perl CGI scripts — must be rebuilt as client-side JavaScript, preserving each location's original content and behavior with no server-side dependency.
 
 ## Repo Structure
+- `index.html` — the SPA's single entry point
+- `js/router.js` — reads the URL hash and renders the matching location into `#app`
+- `js/navbar.js` — builds the shared nav bar
+- `js/locations/*.js` — one file per location, each registering itself on `KidsTown.locations`
+- `css/style.css` — shared styles
 - `graphics/`, `data/` — static assets carried over from the original CGI repo, unchanged
-- `cgi-bin/` — original Perl/CGI files, kept for reference during conversion (not used at runtime once conversion is complete)
-- The 9 interactive locations (`home`, `cityhall`, `citypark`, `library`, `museum`, `school`, `township`, `toystore`, `zoo`) are being rebuilt as client-side JavaScript, replacing their original `scripts/<location>/*.pl` logic
+- See `ARCHITECTURE.md` for how each of these maps back to the original CGI's files
 
 ## How to Run It
-_To be added once the JavaScript conversion is in place — e.g. opening `index.html` directly or serving the repo locally._
+This is a static site, no build step or dependencies. Either:
+- Open `index.html` directly in a browser, or
+- Serve the repo locally (e.g. `python3 -m http.server`) and visit it in a browser
 
 ## Status
-Conversion in progress — static assets are being migrated; JavaScript rebuild of the 9 locations has not yet started.
+- Done: Home, City Hall, City Park
+- Remaining: Library, Museum, School, Township, Toy Store, Zoo
 
 ## AI Resources and Usage
 
