@@ -93,6 +93,92 @@ body.loc-citypark {
   flex: 1 1 150px;
 }
 
+/* City Hall: Casebook Interactive Stories (js/locations/cityhall.js) */
+.cityhall-story {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 8vh 0 2rem;
+}
+
+/* Story pages: image floats left, text wraps around it. */
+.story-image {
+  max-width: 200px;
+  height: auto;
+  float: left;
+  margin: 0 1rem 0.5rem 0;
+}
+
+.story-body {
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.story-lead {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.story-quote {
+  font-family: "Courier New", monospace;
+}
+
+.story-prompt {
+  clear: both;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 0.5rem 0;
+  margin-top: 1rem;
+}
+
+.story-prompt-icon {
+  flex: 0 0 auto;
+}
+
+.story-nav {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.casebook-menu {
+  clear: both;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Clearfix: the image floats inside here, so without this the
+   container would collapse to zero height instead of wrapping it. */
+.casebook-menu::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.casebook-choices {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.story-goodluck {
+  color: #cf0000;
+  font-weight: bold;
+}
+
+.story-caption {
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.story-footnote {
+  color: #cf0000;
+}
+
 /* City Park: Your Big Journey (js/locations/citypark.js) */
 .citypark-story {
   max-width: 900px;
