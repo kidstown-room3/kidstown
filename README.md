@@ -26,8 +26,8 @@ This is a static site, no build step or dependencies. Either:
 - Serve the repo locally (e.g. `python3 -m http.server`) and visit it in a browser
 
 ## Status
-- Done: Home, City Hall, City Park, Museum
-- Remaining: Library, School, Township, Toy Store, Zoo
+- Done: Home, City Hall, City Park, Museum, Library, School
+- Remaining: Township, Toy Store, Zoo
 
 ## AI Resources and Usage
 
